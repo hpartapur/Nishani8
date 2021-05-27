@@ -2,6 +2,7 @@ from openpyxl import *
 import os
 import webbrowser
 from datetime import datetime
+from openpyxl import load_workbook
 
 def findlinkbykitab (kitab):
 	kitabdbpath="~/Downloads/Kitab_Database.xlsx"
@@ -168,7 +169,7 @@ def savequestions (kitab,questions):
 
 schedpath = "~/Downloads/Schedule.xlsx"
 schedpath=os.path.expanduser(schedpath)
-wb_obj = openpyxl.load_workbook(schedpath)
+wb_obj = load_workbook(schedpath)
 sheet_obj = wb_obj.active
 daynum=datetime.today().weekday()
 daynum=daynum+2
@@ -179,6 +180,4 @@ for index in periodindex:
 	findpreviouspages(subject)
 	findlinkbykitab (subject)
 	questions=input("Enter any questions you have about this period. Otherwise, press Enter. ")
-	savequestions (kitab,questions)
-
-
+	savequestions (subject,questions)
