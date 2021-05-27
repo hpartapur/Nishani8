@@ -60,10 +60,14 @@ def findlinkbykitab (kitab):
 
 	webbrowser.open_new (link)
 
-def savepagenumber (subject, newnumber):
+def savepagenumber (subject, newnumber,notes):
 	listofkitabs={"Aalim Ghulam":"B1", "Academic Writing":"B2", "Adab Arabi":"B3", "Adab Fatemi":"B4", "Barnamaj": "B5", "Emotional":"B6", "Free Period":"B7", 
 	"HCIW":"B8", "Ikhwan": "B9", "Language":"B10", "Literature":"B11", "Majalis":"B12", "Management":"B13", "Maqamat":"B14","Maqraat":"B15", "Masool":"B16","Mukhtasar":"B17", 
 	"Muntakhaba":"B18", "Nehj":"B19", "Risala Alif": "B20", "Risala B":"B21", "Takhassus":"B22", "Uloom Quran":"B23","Uyun":"B24"
+	}
+	listofkitabs2={"Aalim Ghulam":"C1", "Academic Writing":"C2", "Adab Arabi":"C3", "Adab Fatemi":"C4", "Barnamaj": "C5", "Emotional":"C6", "Free Period":"C7", 
+	"HCIW":"C8", "Ikhwan": "C9", "Language":"C10", "Literature":"C11", "Majalis":"C12", "Management":"C13", "Maqamat":"C14","Maqraat":"C15", "Masool":"C16","Mukhtasar":"C17", 
+	"Muntakhaba":"C18", "Nehj":"C19", "Risala Alif": "C20", "Risala B":"C21", "Takhassus":"C22", "Uloom Quran":"C23","Uyun":"C24"
 	}
 	from openpyxl import load_workbook
 	nishanipath="~/Downloads/Nishani.xlsx"
@@ -71,6 +75,7 @@ def savepagenumber (subject, newnumber):
 	workbook = load_workbook(nishanipath)
 	sheet_nishani = workbook.active
 	sheet_nishani [listofkitabs.get(subject)] = newnumber
+	sheet_nishani [listofkitabs2.get(subject)] = notes
 	workbook.save(nishanipath)
 
 def findpreviouspages (kitab):
@@ -179,8 +184,9 @@ for index in periodindex:
 	subject = cell_obj.value
 	findpreviouspages(subject)
 	findlinkbykitab (subject)
+	notes=input("Enter any notes or remarks you want to save for this period. Otherwise, just press Enter. ")
 	pagenumber=input ("Enter the page number you reached in this period. ")
-	savepagenumber(subject, pagenumber)
+	savepagenumber(subject, pagenumber, notes)
 	
 
 
