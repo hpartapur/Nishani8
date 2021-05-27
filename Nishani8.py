@@ -80,7 +80,6 @@ def findpreviouspages (kitab):
 	nishanipath=os.path.expanduser(nishanipath)
 	wb2=load_workbook(nishanipath)
 	sheet_obj2 = wb2.active
-	cell_obj2=0
 	if kitab == "Aalim Ghulam":
 		cell_obj2 = sheet_obj2.cell(row = 1, column = 2)
 		notes=sheet_obj2.cell(row=1, column=3)
