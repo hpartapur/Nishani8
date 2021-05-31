@@ -184,8 +184,10 @@ def findpreviouspages (kitab):
 	else:
 		print ("Something went wrong")
 
+
 	prevpage=(cell_obj2.value)
 	notes = (notes.value)
+	questions=(questions.value)
 	print ()
 	print ()
 	print ()
@@ -196,7 +198,7 @@ def findpreviouspages (kitab):
 	c= "Your notes for {}, were: {}".format(kitab, notes)
 	print (c)
 	print ()
-	print ("Your questions from iadat were"+questions)
+	print ("Your questions from iadat were "+questions)
 
 import webbrowser
 webbrowser.open ('https://www.jameasaifiyah.org/Students/stuLogin.aspx')
