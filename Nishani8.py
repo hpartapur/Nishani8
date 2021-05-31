@@ -198,7 +198,8 @@ def findpreviouspages (kitab):
 	c= "Your notes for {}, were: {}".format(kitab, notes)
 	print (c)
 	print ()
-	print ("Your questions from iadat were "+questions)
+	print ("Your questions from iadat were ")
+	print (questions)
 
 import webbrowser
 webbrowser.open ('https://www.jameasaifiyah.org/Students/stuLogin.aspx')
