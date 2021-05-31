@@ -88,83 +88,115 @@ def findpreviouspages (kitab):
 	if kitab == "Aalim Ghulam":
 		cell_obj2 = sheet_obj2.cell(row = 1, column = 2)
 		notes=sheet_obj2.cell(row=1, column=3)
+		questions=sheet_obj2.cell(row=1, column=4)
 	elif kitab == "Academic Writing":
 		cell_obj2 = sheet_obj2.cell(row = 2, column = 2)
 		notes=sheet_obj2.cell(row=2, column=3)
+		questions=sheet_obj2.cell(row=2, column=4)
 	elif kitab == "Adab Arabi":
 		cell_obj2 = sheet_obj2.cell(row = 3, column = 2)
 		notes=sheet_obj2.cell(row=3, column=3)
+		questions=sheet_obj2.cell(row=3, column=4)
 	elif kitab == "Adab Fatemi":
 		cell_obj2 = sheet_obj2.cell(row = 4, column = 2)
 		notes=sheet_obj2.cell(row=4, column=3)
+		questions=sheet_obj2.cell(row=4, column=4)
 	elif kitab == "Barnamaj":
 		cell_obj2 = sheet_obj2.cell(row = 5, column = 2)
 		notes=sheet_obj2.cell(row=5, column=3)
+		questions=sheet_obj2.cell(row=5, column=4)
 	elif kitab == "Emotional":
 		cell_obj2 = sheet_obj2.cell(row = 6, column = 2)
 		notes=sheet_obj2.cell(row=6, column=3)
+		questions=sheet_obj2.cell(row=6, column=4)
 	elif kitab == "Free Period":
 		cell_obj2 = sheet_obj2.cell(row = 7, column = 2)
 		notes=sheet_obj2.cell(row=7, column=3)
+		questions=sheet_obj2.cell(row=7, column=4)
 	elif kitab == "HCIW":
 		cell_obj2 = sheet_obj2.cell(row = 8, column = 2)
 		notes=sheet_obj2.cell(row=8, column=3)
+		questions=sheet_obj2.cell(row=8, column=4)
 	elif kitab == "Ikhwan":
 		cell_obj2 = sheet_obj2.cell(row = 9, column = 2)
 		notes=sheet_obj2.cell(row=9, column=3)
+		questions=sheet_obj2.cell(row=9, column=4)
 	elif kitab == "Language":
 		cell_obj2 = sheet_obj2.cell(row = 10, column = 2)
 		notes=sheet_obj2.cell(row=10, column=3)
+		questions=sheet_obj2.cell(row=10, column=4)
 	elif kitab == "Literature":
 		cell_obj2 = sheet_obj2.cell(row = 11, column = 2)
 		notes=sheet_obj2.cell(row=11, column=3)
+		questions=sheet_obj2.cell(row=11, column=4)
 	elif kitab == "Majalis":
 		cell_obj2 = sheet_obj2.cell(row = 12, column = 2)
 		notes=sheet_obj2.cell(row=12, column=3)
+		questions=sheet_obj2.cell(row=12, column=4)
 	elif kitab == "Management":
 		cell_obj2 = sheet_obj2.cell(row = 13, column = 2)
 		notes=sheet_obj2.cell(row=13, column=3)
+		questions=sheet_obj2.cell(row=13, column=4)
 	elif kitab == "Maqamat":
 		cell_obj2 = sheet_obj2.cell(row = 14, column = 2)
 		notes=sheet_obj2.cell(row=14, column=3)
+		questions=sheet_obj2.cell(row=14, column=4)
 	elif kitab == "Maqraat":
 		cell_obj2 = sheet_obj2.cell(row = 15, column = 2)
 		notes=sheet_obj2.cell(row=15, column=3)
+		questions=sheet_obj2.cell(row=15, column=4)
 	elif kitab == "Masool":
 		cell_obj2 = sheet_obj2.cell(row = 16, column = 2)
 		notes=sheet_obj2.cell(row=16, column=3)
+		questions=sheet_obj2.cell(row=16, column=4)
 	elif kitab == "Mukhtasar":
 		cell_obj2 = sheet_obj2.cell(row = 17, column = 2)
 		notes=sheet_obj2.cell(row=17, column=3)
+		questions=sheet_obj2.cell(row=17, column=4)
 	elif kitab == "Muntakhaba":
 		cell_obj2 = sheet_obj2.cell(row = 18, column = 2)
 		notes=sheet_obj2.cell(row=18, column=3)
+		questions=sheet_obj2.cell(row=18, column=4)
 	elif kitab == "Nehj":
 		cell_obj2 = sheet_obj2.cell(row = 19, column = 2)
 		notes=sheet_obj2.cell(row=19, column=3)
+		questions=sheet_obj2.cell(row=19, column=4)
 	elif kitab == "Risala Alif":
 		cell_obj2 = sheet_obj2.cell(row = 20, column = 2)
 		notes=sheet_obj2.cell(row=20, column=3)
+		questions=sheet_obj2.cell(row=20, column=4)
 	elif kitab == "Risala B":
 		cell_obj2 = sheet_obj2.cell(row = 21, column = 2)
 		notes=sheet_obj2.cell(row=21, column=3)
+		questions=sheet_obj2.cell(row=21, column=4)
 	elif kitab == "Takhassus":
 		cell_obj2 = sheet_obj2.cell(row = 22, column = 2)
 		notes=sheet_obj2.cell(row=22, column=3)
+		questions=sheet_obj2.cell(row=22, column=4)
 	elif kitab == "Uloom Quran":
 		cell_obj2 = sheet_obj2.cell(row = 23, column = 2)
 		notes=sheet_obj2.cell(row=23, column=3)
+		questions=sheet_obj2.cell(row=23, column=4)
 	elif kitab == "Uyun":
 		cell_obj2 = sheet_obj2.cell(row = 24, column = 2)
 		notes=sheet_obj2.cell(row=24, column=3)
+		questions=sheet_obj2.cell(row=24, column=4)
 	else:
 		print ("Something went wrong")
 
 	prevpage=(cell_obj2.value)
 	notes = (notes.value)
+	print ()
+	print ()
+	print ()
+	print ()
+	print ('\033[1m'+kitab+'\033[0m')
 	print ("In {}, you last reached {}".format(kitab, prevpage))
+	print()
 	c= "Your notes for {}, were: {}".format(kitab, notes)
-	print ("\033[1m"+c)
+	print (c)
+	print ()
+	print ("Your questions from iadat were"+questions)
 
 import webbrowser
 webbrowser.open ('https://www.jameasaifiyah.org/Students/stuLogin.aspx')
@@ -185,6 +217,7 @@ for index in periodindex:
 	findpreviouspages(subject)
 	findlinkbykitab (subject)
 	notes=input("Enter any notes or remarks you want to save for this period. Otherwise, just press Enter. ")
+	print ()
 	pagenumber=input ("Enter the page number you reached in this period. ")
 	savepagenumber(subject, pagenumber, notes)
 	
