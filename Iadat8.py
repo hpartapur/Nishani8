@@ -38,7 +38,7 @@ def findlinkbykitab (kitab):
 		cell_obj1 = sheet_obj1.cell(row = 13, column = 2)
 	elif kitab == "Maqamat":
 		cell_obj1 = sheet_obj1.cell(row = 14, column = 2)
-	elif kitab == "Maqraat":
+	elif kitab == "Maqrat":
 		cell_obj1 = sheet_obj1.cell(row = 15, column = 2)
 	elif kitab == "Masool":
 		cell_obj1 = sheet_obj1.cell(row = 16, column = 2)
@@ -114,7 +114,7 @@ def findpreviouspages (kitab):
 	elif kitab == "Maqamat":
 		cell_obj2 = sheet_obj2.cell(row = 14, column = 2)
 		notes=sheet_obj2.cell(row=14, column=3)
-	elif kitab == "Maqraat":
+	elif kitab == "Maqrat":
 		cell_obj2 = sheet_obj2.cell(row = 15, column = 2)
 		notes=sheet_obj2.cell(row=15, column=3)
 	elif kitab == "Masool":
@@ -156,7 +156,7 @@ def findpreviouspages (kitab):
 
 def savequestions (kitab,questions):
 	listofkitabs={"Aalim Ghulam":"D1", "Academic Writing":"D2", "Adab Arabi":"D3", "Adab Fatemi":"D4", "Barnamaj": "D5", "Emotional":"D6", "Free Period":"D7", 
-	"HCIW":"D8", "Ikhwan": "D9", "Language":"D10", "Literature":"D11", "Majalis":"D12", "Management":"D13", "Maqamat":"D14","Maqraat":"D15", "Masool":"D16","Mukhtasar":"D17", 
+	"HCIW":"D8", "Ikhwan": "D9", "Language":"D10", "Literature":"D11", "Majalis":"D12", "Management":"D13", "Maqamat":"D14","Maqrat":"D15", "Masool":"D16","Mukhtasar":"D17", 
 	"Muntakhaba":"D18", "Nehj":"D19", "Risala Alif": "D20", "Risala B":"D21", "Takhassus":"D22", "Uloom Quran":"D23","Uyun":"D24"
 	}
 	from openpyxl import load_workbook
