@@ -1,7 +1,7 @@
 from openpyxl import *
 import os
 def findlinkbykitab (kitab):
-	kitabdbpath="~/Downloads/Kitab_Database.xlsx"
+	kitabdbpath="~/Desktop/Nishani8/Kitab_Database.xlsx"
 	kitabdbpath= os.path.expanduser(kitabdbpath) 
 	wb1=load_workbook(kitabdbpath)
 	sheet_obj1 = wb1.active
@@ -70,7 +70,7 @@ def savepagenumber (subject, newnumber,notes):
 	"Muntakhaba":"C18", "Nehj":"C19", "Risala Alif": "C20", "Risala B":"C21", "Takhassus":"C22", "Uloom Quran":"C23","Uyun":"C24"
 	}
 	from openpyxl import load_workbook
-	nishanipath="~/Downloads/Nishani.xlsx"
+	nishanipath="~/Desktop/Nishani8//Nishani.xlsx"
 	nishanipath=os.path.expanduser(nishanipath)
 	workbook = load_workbook(nishanipath)
 	sheet_nishani = workbook.active
@@ -81,7 +81,7 @@ def savepagenumber (subject, newnumber,notes):
 def findpreviouspages (kitab):
 	
 
-	nishanipath="~/Downloads/Nishani.xlsx"
+	nishanipath="~/Desktop/Nishani8/Nishani.xlsx"
 	nishanipath=os.path.expanduser(nishanipath)
 	wb2=load_workbook(nishanipath)
 	sheet_obj2 = wb2.active
@@ -205,7 +205,7 @@ import webbrowser
 webbrowser.open ('https://www.jameasaifiyah.org/Students/stuLogin.aspx')
 from datetime import datetime
 import openpyxl
-schedpath = "~/Downloads/Schedule.xlsx"
+schedpath = "~/Desktop/Nishani8/Schedule.xlsx"
 schedpath=os.path.expanduser(schedpath)
 wb_obj = openpyxl.load_workbook(schedpath)
 sheet_obj = wb_obj.active

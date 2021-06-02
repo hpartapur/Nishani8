@@ -5,7 +5,7 @@ from datetime import datetime
 from openpyxl import load_workbook
 
 def findlinkbykitab (kitab):
-	kitabdbpath="~/Downloads/Kitab_Database.xlsx"
+	kitabdbpath="~/Desktop/Nishani8/Kitab_Database.xlsx"
 	kitabdbpath= os.path.expanduser(kitabdbpath) 
 	wb1=load_workbook(kitabdbpath)
 	sheet_obj1 = wb1.active
@@ -68,7 +68,7 @@ def findlinkbykitab (kitab):
 def findpreviouspages (kitab):
 	
 
-	nishanipath="~/Downloads/Nishani.xlsx"
+	nishanipath="~/Desktop/Nishani8/Nishani.xlsx"
 	nishanipath=os.path.expanduser(nishanipath)
 	wb2=load_workbook(nishanipath)
 	sheet_obj2 = wb2.active
@@ -160,14 +160,14 @@ def savequestions (kitab,questions):
 	"Muntakhaba":"D18", "Nehj":"D19", "Risala Alif": "D20", "Risala B":"D21", "Takhassus":"D22", "Uloom Quran":"D23","Uyun":"D24"
 	}
 	from openpyxl import load_workbook
-	nishanipath="~/Downloads/Nishani.xlsx"
+	nishanipath="~/Desktop/Nishani8/Nishani.xlsx"
 	nishanipath=os.path.expanduser(nishanipath)
 	workbook = load_workbook(nishanipath)
 	sheet_nishani = workbook.active
 	sheet_nishani [listofkitabs.get(subject)] = questions
 	workbook.save(nishanipath)
 
-schedpath = "~/Downloads/Schedule.xlsx"
+schedpath = "~/Desktop/Nishani8/Schedule.xlsx"
 schedpath=os.path.expanduser(schedpath)
 wb_obj = load_workbook(schedpath)
 sheet_obj = wb_obj.active
