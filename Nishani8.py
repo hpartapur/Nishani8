@@ -2,7 +2,7 @@ from openpyxl import *
 import os
 def findlinkbykitab (kitab):
 	kitabdbpath="~/Desktop/Nishani8/Kitab_Database.xlsx"
-	kitabdbpath= os.path.expanduser(kitabdbpath) 
+	kitabdbpath= os.path.expanduser(kitabdbpath)
 	wb1=load_workbook(kitabdbpath)
 	sheet_obj1 = wb1.active
 
@@ -54,20 +54,28 @@ def findlinkbykitab (kitab):
 		cell_obj1 = sheet_obj1.cell(row = 23, column = 2)
 	elif kitab == "Uyun":
 		cell_obj1 = sheet_obj1.cell(row = 24, column = 2)
+	elif kitab == "Nush":
+		cell_obj1 = sheet_obj1.cell(row = 25, column = 2)
+	elif kitab == "Daim":
+		cell_obj1 = sheet_obj1.cell(row = 26, column = 2)
 	else:
 		print ("Something went wrong")
 	link=(cell_obj1.value)
 
-	webbrowser.open_new (link)
+	if link.startswith("http"):
+		webbrowser.open(link)
+	else:
+		os.system(link)
+
 
 def savepagenumber (subject, newnumber,notes):
-	listofkitabs={"Aalim Ghulam":"B1", "Academic Writing":"B2", "Adab Arabi":"B3", "Adab Fatemi":"B4", "Barnamaj": "B5", "Emotional":"B6", "Free Period":"B7", 
-	"HCIW":"B8", "Ikhwan": "B9", "Language":"B10", "Literature":"B11", "Majalis":"B12", "Management":"B13", "Maqamat":"B14","Maqrat":"B15", "Masool":"B16","Mukhtasar":"B17", 
-	"Muntakhaba":"B18", "Nehj":"B19", "Risala Alif": "B20", "Risala B":"B21", "Takhassus":"B22", "Uloom Quran":"B23","Uyun":"B24"
+	listofkitabs={"Aalim Ghulam":"B1", "Academic Writing":"B2", "Adab Arabi":"B3", "Adab Fatemi":"B4", "Barnamaj": "B5", "Emotional":"B6", "Free Period":"B7",
+	"HCIW":"B8", "Ikhwan": "B9", "Language":"B10", "Literature":"B11", "Majalis":"B12", "Management":"B13", "Maqamat":"B14","Maqrat":"B15", "Masool":"B16","Mukhtasar":"B17",
+	"Muntakhaba":"B18", "Nehj":"B19", "Risala Alif": "B20", "Risala B":"B21", "Takhassus":"B22", "Uloom Quran":"B23","Uyun":"B24", "Nush":"B25","Daim":"B25",
 	}
-	listofkitabs2={"Aalim Ghulam":"C1", "Academic Writing":"C2", "Adab Arabi":"C3", "Adab Fatemi":"C4", "Barnamaj": "C5", "Emotional":"C6", "Free Period":"C7", 
-	"HCIW":"C8", "Ikhwan": "C9", "Language":"C10", "Literature":"C11", "Majalis":"C12", "Management":"C13", "Maqamat":"C14","Maqrat":"C15", "Masool":"C16","Mukhtasar":"C17", 
-	"Muntakhaba":"C18", "Nehj":"C19", "Risala Alif": "C20", "Risala B":"C21", "Takhassus":"C22", "Uloom Quran":"C23","Uyun":"C24"
+	listofkitabs2={"Aalim Ghulam":"C1", "Academic Writing":"C2", "Adab Arabi":"C3", "Adab Fatemi":"C4", "Barnamaj": "C5", "Emotional":"C6", "Free Period":"C7",
+	"HCIW":"C8", "Ikhwan": "C9", "Language":"C10", "Literature":"C11", "Majalis":"C12", "Management":"C13", "Maqamat":"C14","Maqrat":"C15", "Masool":"C16","Mukhtasar":"C17",
+	"Muntakhaba":"C18", "Nehj":"C19", "Risala Alif": "C20", "Risala B":"C21", "Takhassus":"C22", "Uloom Quran":"C23","Uyun":"C24","Nush":"C25", "Daim":"C25",
 	}
 	from openpyxl import load_workbook
 	nishanipath="~/Desktop/Nishani8//Nishani.xlsx"
@@ -79,7 +87,7 @@ def savepagenumber (subject, newnumber,notes):
 	workbook.save(nishanipath)
 
 def findpreviouspages (kitab):
-	
+
 
 	nishanipath="~/Desktop/Nishani8/Nishani.xlsx"
 	nishanipath=os.path.expanduser(nishanipath)
@@ -181,13 +189,35 @@ def findpreviouspages (kitab):
 		cell_obj2 = sheet_obj2.cell(row = 24, column = 2)
 		notes=sheet_obj2.cell(row=24, column=3)
 		questions=sheet_obj2.cell(row=24, column=4)
+
+	elif kitab == "Nush":
+			cell_obj2 = sheet_obj2.cell(row = 25, column = 2)
+			notes=sheet_obj2.cell(row=25, column=3)
+			questions=sheet_obj2.cell(row=25, column=4)
+	elif kitab == "Daim":
+			cell_obj2 = sheet_obj2.cell(row = 26, column = 2)
+			notes=sheet_obj2.cell(row=26, column=3)
+			questions=sheet_obj2.cell(row=26, column=4)
+	elif kitab == "Moayyediyah":
+			cell_obj2 = sheet_obj2.cell(row = 27, column = 2)
+			notes=sheet_obj2.cell(row=27, column=3)
+			questions=sheet_obj2.cell(row=27, column=4)
 	else:
 		print ("Something went wrong")
 
 
-	prevpage=(cell_obj2.value)
-	notes = (notes.value)
-	questions=(questions.value)
+	try:
+		prevpage=(cell_obj2.value)
+	except:
+		prevpage="N/A"
+	try:
+		notes = (notes.value)
+	except:
+		notes="N/A"
+	try:
+		questions=(questions.value)
+	except:
+		questions="N/A"
 	print ()
 	print ()
 	print ()
@@ -218,14 +248,14 @@ periodindex = [2,3,4,5,6,7,8,9,10]
 for index in periodindex:
 	cell_obj = sheet_obj.cell(row = index, column = daynum)
 	subject = cell_obj.value
+	print ("SUBJECT!!!")
+	print (subject)
 	findpreviouspages(subject)
 	findlinkbykitab (subject)
 	notes=input("Enter any notes or remarks you want to save for this period. Otherwise, just press Enter. ")
 	print ()
 	pagenumber=input ("Enter the page number you reached in this period. ")
 	savepagenumber(subject, pagenumber, notes)
-	
 
 
-
-
+e=input("ENTER TO LEAVE")
